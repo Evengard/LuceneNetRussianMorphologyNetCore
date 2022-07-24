@@ -1,2 +1,8 @@
 # LuceneNetRussianMorphologyNetCore
 A quick and dirty Java to C# conversion of https://github.com/AKuznetsov/russianmorphology adapted to Lucene.NET 4.8 and .NET Core
+
+It uses the same "morph.info" dictionary files as the original library, so any updates to theese in the original repo could be easily transplanted here.
+
+The conversion was done by an automated tool and then the resulting code was fixed manually. There may be quirks here and there, also this doesn't know anything about being async, so deal with it.
+
+I converted all the main code and a small subset of tests (the ones I actually needed), it seems to work for the actual usage with Lucene.NET 4.8, but I haven't tested anything beyond that.

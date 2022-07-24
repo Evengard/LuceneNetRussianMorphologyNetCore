@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DictionaryReader\**" />
+    <Compile Remove="English\**" />
+    <Compile Remove="Russian\**" />
+    <EmbeddedResource Remove="DictionaryReader\**" />
+    <EmbeddedResource Remove="English\**" />
+    <EmbeddedResource Remove="Russian\**" />
+    <None Remove="DictionaryReader\**" />
+    <None Remove="English\**" />
+    <None Remove="Russian\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\english-analyzer-answer.txt" />
+    <None Remove="Resources\english-analyzer-data.txt" />
+    <None Remove="Resources\english-morphology-test.txt" />
+    <None Remove="Resources\russian-analyzer-answer.txt" />
+    <None Remove="Resources\russian-analyzer-data.txt" />
+    <None Remove="Resources\russian-morphology-test.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\english-analyzer-answer.txt" />
+    <EmbeddedResource Include="Resources\english-analyzer-data.txt" />
+    <EmbeddedResource Include="Resources\english-morphology-test.txt" />
+    <EmbeddedResource Include="Resources\russian-analyzer-answer.txt" />
+    <EmbeddedResource Include="Resources\russian-analyzer-data.txt" />
+    <EmbeddedResource Include="Resources\russian-morphology-test.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lucene.Net.TestFramework" Version="4.8.0-beta00016" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LuceneNetRussianMorphology\LuceneNetRussianMorphology.csproj" />
+  </ItemGroup>
+
+</Project>
